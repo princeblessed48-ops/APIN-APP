@@ -7,3 +7,6 @@ backend/.env
 mobile/.env
 mobile/.expo/
 mobile/dist/
+
+# Ignore all PDF files
+*.pdf

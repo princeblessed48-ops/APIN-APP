@@ -10,6 +10,7 @@ const { requireAuth } = require('./middleware/auth');
 const { errorHandler } = require('./middleware/errorHandler');
 const authRoutes = require('./modules/auth/auth.routes');
 const inventoryRoutes = require('./modules/inventory/inventory.routes');
+const labRoutes = require('./modules/lab/lab.routes');
 
 const app = express();
 
@@ -33,6 +34,8 @@ app.get('/health', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/inventory', inventoryRoutes);
+app.use('/api/lab', labRoutes);
+app.use('/api/laboratory', labRoutes);
 
 app.get('/api/dashboard', requireAuth, (req, res) => {
   res.json({
